@@ -57,18 +57,18 @@ const generateGraffiti = () => {
         <h2>Preview</h2>
 
         <div v-if="selectedStyle === 'style1'" class="graffiti-output">
-          <img src="./assets/accesories/angel_ring.png" class="angel-ring" />
+          <img src="./assets/accesories/angel_ring.png" alt="angel_ring" class="angel-ring" />
 
           <div class="graffiti-output-text" :class="selectedStyle">
-            <img src="./assets/accesories/quote_0.png" class="graffiti-image quote" :class="selectedStyle" :style="{ width: `${65 / graffitiImages.length + 2}%` }" />
-            <img v-for="(gi, idx) in graffitiImages" :key="gi" class="graffiti-image" :class="selectedStyle" :src="gi" :style="{ width: `${65 / graffitiImages.length + 2}%`, zIndex: graffitiImages.length - idx }"/>
-            <img src="./assets/accesories/quote_1.png" class="graffiti-image quote" :class="selectedStyle" :style="{ width: `${65 / graffitiImages.length + 2}%` }" />
+            <img src="./assets/accesories/quote_0.png" alt="quote" class="graffiti-image quote" :class="selectedStyle" :style="{ width: `${65 / graffitiImages.length + 2}%` }" />
+            <img v-for="(gi, idx) in graffitiImages" :key="gi" alt="graffitiImages" class="graffiti-image" :class="selectedStyle" :src="gi" :style="{ width: `${65 / graffitiImages.length + 2}%`, zIndex: graffitiImages.length - idx }"/>
+            <img src="./assets/accesories/quote_1.png" alt="quote" class="graffiti-image quote" :class="selectedStyle" :style="{ width: `${65 / graffitiImages.length + 2}%` }" />
           </div>
         </div>
 
         <div v-else>
           <div class="graffiti-output" :class="selectedStyle">
-            <img v-for="(gi, idx) in graffitiImages" :key="gi" class="graffiti-image" :class="selectedStyle" :src="gi" :style="{zIndex: graffitiImages.length - idx}" />
+            <img v-for="(gi, idx) in graffitiImages" alt="graffitiImages" :key="gi" class="graffiti-image" :class="selectedStyle" :src="gi" :style="{zIndex: graffitiImages.length - idx}" />
           </div>
         </div>
       </section>
@@ -249,4 +249,75 @@ const generateGraffiti = () => {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+/* 모바일 (최대 767px) */
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .controls, .preview {
+    padding: 1rem;
+  }
+
+  .style_select_wrapper {
+    grid-template-columns: 1fr 1fr; // 버튼 2개씩
+  }
+
+  .graffiti-output {
+    padding: 10px;
+
+    .angel-ring {
+      height: 100px; // angel ring 작게
+    }
+  }
+
+  .graffiti-image {
+    width: 80px; // 이미지 작게
+    margin-left: -5%; // 겹치는 정도 키움
+  }
+
+  .generate-button {
+    padding: 0.75rem;
+  }
+
+  .header img {
+    max-width: 90%; // 로고 크기 줄이기
+  }
+}
+
+/* 태블릿 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .controls, .preview {
+    padding: 1.5rem;
+  }
+
+  .style_select_wrapper {
+    grid-template-columns: 1fr 1fr 1fr; // 버튼 3개씩
+  }
+
+  .graffiti-output {
+    padding: 15px;
+
+    .angel-ring {
+      height: 120px;
+    }
+  }
+
+  .graffiti-image {
+    width: 120px;
+    margin-left: -3%;
+  }
+
+  .header img {
+    max-width: 95%;
+  }
+}
+
 </style>
