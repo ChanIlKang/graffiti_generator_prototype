@@ -274,8 +274,8 @@ const generateGraffiti = () => {
   }
 
   .graffiti-image {
-    width: 80px; // 이미지 작게
-    margin-left: -5%; // 겹치는 정도 키움
+    width: 80px !important; // 이미지 작게
+    margin-left: -3% !important; // 겹치는 정도 키움
   }
 
   .generate-button {
