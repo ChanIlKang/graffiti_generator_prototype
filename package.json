@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-cli-service build",
-    "deploy": "gh-pages -d dist",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "pinia": "^3.0.1",
