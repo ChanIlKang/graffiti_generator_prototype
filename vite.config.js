@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/리포지토리명/', // <<<<<<<< 이거 추가!!
+  base: '/graffiti_generator_prototype/',
   plugins: [
     vue(),
     vueDevTools(),
